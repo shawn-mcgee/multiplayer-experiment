@@ -4,7 +4,7 @@ I have a deep desire to create a game and to do it with friends. A part of me be
 
 ### Objectives
 
-- Automagically publish to the web in minutes
+- [X] Automagically publish to the web in minutes
 - Connect players with painless matchmaking (Maybe Trystero?)
 - Develop a workflow for quickly testing multiplayer features locally
 
@@ -41,10 +41,10 @@ Found this neat project for generating artifacts for Mac, Windows, Linux, and th
 ```yaml
 jobs:
   export-windows:
-    # ...
-    container:
-      image: barichello/godot-ci:4.3 # <-- Update this line with the correct version of Godot for your project
-    # ...
+	# ...
+	container:
+	  image: barichello/godot-ci:4.3 # <-- Update this line with the correct version of Godot for your project
+	# ...
 ```
 
 - I had to configure exports for Mac, Windows, Linux, and the Web
