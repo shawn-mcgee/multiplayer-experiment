@@ -1,3 +1,7 @@
+### Motivation
+
+I have a deep desire to create a game and to do it with friends. A part of me believes that if I can scaffold a working multiplayer workflow then getting friends together to goof around and author content will be *"easy"*. Getting this project working is 
+
 ### Objectives
 
 - Automagically publish to the web in minutes
@@ -8,10 +12,20 @@
 
 - [ ] Lobby which limits the number of connections
 - [ ] Lobby with user roles (host, guest, spectator)
-- [ ] Host controls to kick players
+- [ ] Host controls to kick users
 - [ ] Users can identify themselves (e.g. display name)
 - [ ] Users can communicate (e.g. text chat)
-- [ ] Host controls to mute players
-- [ ] Users can move around a shared environment
-- [ ] Users can interact with a shared environment (e.g. build, destroy, etc)
-- [ ] Users can interact with each other (e.g. bump, attack, etc)
+- [ ] Host controls to mute users
+- [ ] Players can move around a shared environment
+- [ ] Players can interact with a shared environment (e.g. build, destroy, etc)
+- [ ] Players can interact with each other (e.g. bump, attack, etc)
+- [ ] Spectators can observe the game
+- [ ] Spectators can move (their view) around the shared environment
+
+### Terms
+
+**user** - any peer
+**host** - the authoritative peer
+**guest** - any non-authoritative peer
+**player** - any peer playing the game
+**spectator** - any peer observing the game
