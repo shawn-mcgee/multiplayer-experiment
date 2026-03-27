@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="multiplayer-experiment"
+run/main_scene="uid://bu4fgrmv0fedn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
