@@ -24,8 +24,8 @@ I have a deep desire to create a game and to do it with friends. A part of me be
 
 ### Terms
 
-**user** - any peer
-**host** - the authoritative peer
-**guest** - any non-authoritative peer
-**player** - any peer playing the game
-**spectator** - any peer observing the game
+- **user** - any peer
+- **host** - the authoritative peer
+- **guest** - any non-authoritative peer
+- **player** - any peer playing the game
+- **spectator** - any peer observing the game
