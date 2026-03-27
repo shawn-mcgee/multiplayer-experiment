@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://kvjy5mj71cr7"]
+
+[ext_resource type="Script" uid="uid://dxvj5sbklul0h" path="res://lobby.gd" id="1_ll2xe"]
+
+[node name="Lobby" type="Control" unique_id=324391223]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_ll2xe")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=241432302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBoxContainer" unique_id=150391127]
+layout_mode = 2
+text = "Godot Multiplayer Experiment"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=947972505]
+layout_mode = 2
+alignment = 1
+
+[node name="Host_Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1468229643]
+layout_mode = 2
+text = "Host Game"
+
+[node name="Join_Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=704597322]
+layout_mode = 2
+text = "Join Game"
+
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/Host_Button" to="." method="_on_host_button_button_down"]
+[connection signal="button_down" from="VBoxContainer/HBoxContainer/Join_Button" to="." method="_on_join_button_button_down"]
