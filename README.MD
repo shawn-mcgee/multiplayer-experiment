@@ -5,8 +5,8 @@ I have a deep desire to create a game and to do it with friends. A part of me be
 ### Objectives
 
 - [X] Automagically publish to the web in minutes
-- Connect players with painless matchmaking (Maybe Trystero?)
-- Develop a workflow for quickly testing multiplayer features locally
+- [ ] Connect players with painless matchmaking (Maybe Trystero?)
+- [ ] Develop a workflow for quickly testing multiplayer features locally
 
 ### Features
 
@@ -16,7 +16,7 @@ I have a deep desire to create a game and to do it with friends. A part of me be
 - [ ] Users can identify themselves (e.g. display name)
 - [ ] Users can communicate (e.g. text chat)
 - [ ] Host controls to mute users
-- [ ] Players can move around a shared environment
+- [x] Players can move around a shared environment
 - [ ] Players can interact with a shared environment (e.g. build, destroy, etc)
 - [ ] Players can interact with each other (e.g. bump, attack, etc)
 - [ ] Spectators can observe the game
