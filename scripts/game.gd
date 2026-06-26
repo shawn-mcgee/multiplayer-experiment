@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var multiplayer_ui = $MultiplayerUI
 
-var peer = ENetMultiplayerPeer.new()
+var peer = WebSocketMultiplayerPeer.new()
 
 const PLAYER = preload("res://scenes/player.tscn")
 
@@ -10,7 +10,7 @@ const PLAYER = preload("res://scenes/player.tscn")
 
 func _on_join_pressed() -> void:
   multiplayer_ui.hide()
-  peer.create_client("localhost", 42069)
+  peer.create_client("ws://localhost:42069")
   multiplayer.multiplayer_peer = peer
 
 func _on_host_pressed() -> void:
