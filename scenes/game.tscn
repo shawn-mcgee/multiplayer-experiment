@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bvk6k06w72x6t"]
+
+[ext_resource type="Script" uid="uid://dkm5pjh3u7dqc" path="res://scripts/game.gd" id="1_yqjtg"]
+
+[node name="Game" type="Node2D" unique_id=902745067]
+script = ExtResource("1_yqjtg")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1594316243]
+
+[node name="MultiplayerUI" type="CanvasLayer" parent="." unique_id=778655585]
+
+[node name="Control" type="Control" parent="MultiplayerUI" unique_id=331328502]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MultiplayerUI/Control" unique_id=1753204384]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="MultiplayerUI/Control/VBoxContainer" unique_id=1530360671]
+layout_mode = 2
+text = "Multiplayer Experiment"
+
+[node name="Host" type="Button" parent="MultiplayerUI/Control/VBoxContainer" unique_id=1592676649]
+layout_mode = 2
+text = "Host"
+
+[node name="Join" type="Button" parent="MultiplayerUI/Control/VBoxContainer" unique_id=223775436]
+layout_mode = 2
+text = "Join"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1853687377]
+_spawnable_scenes = PackedStringArray("uid://c7uac7uxabqjs")
+spawn_path = NodePath("..")
+
+[connection signal="pressed" from="MultiplayerUI/Control/VBoxContainer/Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="MultiplayerUI/Control/VBoxContainer/Join" to="." method="_on_join_pressed"]
