@@ -41,7 +41,7 @@ func _setup_host() -> void:
       $WebRTC/Host/CenterContainer/VBoxContainer/OfferText.text = sdp
   )
   cx.ice_candidate_created.connect(
-    func(media: String, index: int, name: String):
+    func(media: String, index: int, name_: String):
       var candidates_text = $WebRTC/Host/CenterContainer/VBoxContainer/OutgoingCandidates.text
 
       if candidates_text == "":
@@ -52,7 +52,7 @@ func _setup_host() -> void:
       candidates.push_back({
         "media": media,
         "index": index,
-        "name": name
+        "name": name_
       })
 
       candidates_text = JSON.stringify(candidates)
@@ -146,7 +146,7 @@ func _setup_join() -> void:
   )
 
   cx.ice_candidate_created.connect(
-    func(media: String, index: int, name: String):
+    func(media: String, index: int, name_: String):
       var candidates_text = $WebRTC/Join/CenterContainer/VBoxContainer/OutgoingCandidates.text
 
       if candidates_text == "":
@@ -157,7 +157,7 @@ func _setup_join() -> void:
       candidates.push_back({
         "media": media,
         "index": index,
-        "name": name
+        "name": name_
       })
 
       candidates_text = JSON.stringify(candidates)
