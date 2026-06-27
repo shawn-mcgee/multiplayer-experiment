@@ -7,34 +7,270 @@ script = ExtResource("1_yqjtg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1594316243]
 
-[node name="MultiplayerUI" type="CanvasLayer" parent="." unique_id=778655585]
+[node name="WebRTC" type="CanvasLayer" parent="." unique_id=778655585]
 
-[node name="Control" type="Control" parent="MultiplayerUI" unique_id=331328502]
+[node name="Start" type="Control" parent="WebRTC" unique_id=331328502]
+visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MultiplayerUI/Control" unique_id=1753204384]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="CenterContainer" type="CenterContainer" parent="WebRTC/Start" unique_id=1248767501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Title" type="Label" parent="MultiplayerUI/Control/VBoxContainer" unique_id=1530360671]
+[node name="VBoxContainer" type="VBoxContainer" parent="WebRTC/Start/CenterContainer" unique_id=1753204384]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="WebRTC/Start/CenterContainer/VBoxContainer" unique_id=1530360671]
 layout_mode = 2
 text = "Multiplayer Experiment"
 
-[node name="Host" type="Button" parent="MultiplayerUI/Control/VBoxContainer" unique_id=1592676649]
+[node name="HostButton" type="Button" parent="WebRTC/Start/CenterContainer/VBoxContainer" unique_id=1592676649]
 layout_mode = 2
 text = "Host"
 
-[node name="Join" type="Button" parent="MultiplayerUI/Control/VBoxContainer" unique_id=223775436]
+[node name="JoinButton" type="Button" parent="WebRTC/Start/CenterContainer/VBoxContainer" unique_id=223775436]
 layout_mode = 2
 text = "Join"
+
+[node name="Host" type="Control" parent="WebRTC" unique_id=1935013616]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="WebRTC/Host" unique_id=646220724]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WebRTC/Host/CenterContainer" unique_id=1517556760]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=2077957295]
+layout_mode = 2
+text = "WebRTC (Host)"
+
+[node name="HSeparator5" type="HSeparator" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=557624291]
+layout_mode = 2
+
+[node name="OfferLabel" type="Label" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1839608712]
+layout_mode = 2
+text = "WebRTC Offer"
+
+[node name="GenerateOffer" type="Button" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=902538897]
+layout_mode = 2
+text = "Generate WebRTC Offer"
+
+[node name="OfferText" type="TextEdit" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=825849564]
+layout_mode = 2
+placeholder_text = "WebRTC Offer Text
+"
+editable = false
+
+[node name="CopyOffer" type="Button" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=562588216]
+layout_mode = 2
+text = "Copy WebRTC Offer to Clipboard"
+
+[node name="HSeparator" type="HSeparator" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1816571803]
+layout_mode = 2
+
+[node name="AnswerLabel" type="Label" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=2087095478]
+layout_mode = 2
+text = "WebRTC Answer"
+
+[node name="AnswerText" type="TextEdit" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=232558918]
+layout_mode = 2
+placeholder_text = "WebRTC Answer Text
+"
+
+[node name="PasteAnswer" type="Button" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=471119427]
+layout_mode = 2
+text = "Paste WebRTC Answer from Clipboard"
+
+[node name="HSeparator2" type="HSeparator" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=974733728]
+layout_mode = 2
+
+[node name="OutoingCandidatesLabel" type="Label" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1812735559]
+layout_mode = 2
+text = "WebRTC ICE Candidates (Outgoing)"
+
+[node name="GenerateOutgoingCandidates" type="Button" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1804583160]
+layout_mode = 2
+text = "Generate Outgoing ICE Candidates"
+
+[node name="OutgoingCandidates" type="TextEdit" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=435617552]
+layout_mode = 2
+placeholder_text = "Outgoing ICE Candidates
+"
+editable = false
+wrap_mode = 1
+
+[node name="CopyOutgoingCandidates" type="Button" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=290309377]
+layout_mode = 2
+text = "Copy Outgoing ICE Candidates to Clipboard"
+
+[node name="HSeparator3" type="HSeparator" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1369909310]
+layout_mode = 2
+
+[node name="IncomingCandidatesLabel" type="Label" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1953081902]
+layout_mode = 2
+text = "WebRTC ICE Candidates (Incoming)"
+
+[node name="IncomingCandidates" type="TextEdit" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=303979499]
+layout_mode = 2
+placeholder_text = "Incoming ICE Candidates
+"
+wrap_mode = 1
+
+[node name="PasteCandidates" type="Button" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1330778335]
+layout_mode = 2
+text = "Paste Incoming ICE Candidates from Clipboard"
+
+[node name="HSeparator4" type="HSeparator" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1169175242]
+layout_mode = 2
+
+[node name="Connect" type="Button" parent="WebRTC/Host/CenterContainer/VBoxContainer" unique_id=1843265723]
+layout_mode = 2
+text = "Connect"
+
+[node name="Join" type="Control" parent="WebRTC" unique_id=1872771617]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="WebRTC/Join" unique_id=293313993]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WebRTC/Join/CenterContainer" unique_id=1665228440]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=1591201745]
+layout_mode = 2
+text = "WebRTC (Join)"
+
+[node name="HSeparator5" type="HSeparator" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=369951604]
+layout_mode = 2
+
+[node name="OfferLabel" type="Label" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=344957390]
+layout_mode = 2
+text = "WebRTC Offer"
+
+[node name="OfferText" type="TextEdit" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=1113421248]
+layout_mode = 2
+placeholder_text = "WebRTC Offer Text
+"
+
+[node name="PasteOffer" type="Button" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=343047348]
+layout_mode = 2
+text = "Paste WebRTC Offer from Clipboard"
+
+[node name="HSeparator" type="HSeparator" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=721395452]
+layout_mode = 2
+
+[node name="AnswerLabel" type="Label" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=854091418]
+layout_mode = 2
+text = "WebRTC Answer"
+
+[node name="GenerateAnswer" type="Button" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=503997697]
+layout_mode = 2
+text = "Generate WebRTC Answer"
+
+[node name="AnswerText" type="TextEdit" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=1708384995]
+layout_mode = 2
+placeholder_text = "WebRTC Answer Text
+"
+editable = false
+
+[node name="CopyAnswer" type="Button" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=1881649250]
+layout_mode = 2
+text = "Copy WebRTC Answer to Clipboard"
+
+[node name="HSeparator2" type="HSeparator" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=1821339749]
+layout_mode = 2
+
+[node name="OutoingCandidatesLabel" type="Label" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=538944356]
+layout_mode = 2
+text = "WebRTC ICE Candidates (Outgoing)"
+
+[node name="GenerateOutgoingCandidates" type="Button" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=772652582]
+layout_mode = 2
+text = "Generate Outgoing ICE Candidates"
+
+[node name="OutgoingCandidates" type="TextEdit" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=654112483]
+layout_mode = 2
+placeholder_text = "Outgoing ICE Candidates
+"
+editable = false
+wrap_mode = 1
+
+[node name="CopyOutgoingCandidates" type="Button" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=915210752]
+layout_mode = 2
+text = "Copy Outgoing ICE Candidates to Clipboard"
+
+[node name="HSeparator3" type="HSeparator" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=392769109]
+layout_mode = 2
+
+[node name="IncomingCandidatesLabel" type="Label" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=818571170]
+layout_mode = 2
+text = "WebRTC ICE Candidates (Incoming)"
+
+[node name="IncomingCandidates" type="TextEdit" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=1058763784]
+layout_mode = 2
+placeholder_text = "Incoming ICE Candidates
+"
+wrap_mode = 1
+
+[node name="PasteCandidates" type="Button" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=666165289]
+layout_mode = 2
+text = "Paste Incoming ICE Candidates from Clipboard"
+
+[node name="HSeparator4" type="HSeparator" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=270587270]
+layout_mode = 2
+
+[node name="Connect" type="Button" parent="WebRTC/Join/CenterContainer/VBoxContainer" unique_id=850776826]
+layout_mode = 2
+text = "Connect"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1853687377]
 _spawnable_scenes = PackedStringArray("uid://c7uac7uxabqjs")
 spawn_path = NodePath("..")
 
-[connection signal="pressed" from="MultiplayerUI/Control/VBoxContainer/Host" to="." method="_on_host_pressed"]
-[connection signal="pressed" from="MultiplayerUI/Control/VBoxContainer/Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="WebRTC/Start/CenterContainer/VBoxContainer/HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="WebRTC/Start/CenterContainer/VBoxContainer/JoinButton" to="." method="_on_join_button_pressed"]
+[connection signal="pressed" from="WebRTC/Host/CenterContainer/VBoxContainer/GenerateOffer" to="." method="_on_host_generate_offer_pressed"]
+[connection signal="pressed" from="WebRTC/Host/CenterContainer/VBoxContainer/CopyOffer" to="." method="_on_host_copy_offer_pressed"]
+[connection signal="pressed" from="WebRTC/Host/CenterContainer/VBoxContainer/PasteAnswer" to="." method="_on_host_paste_answer_pressed"]
+[connection signal="pressed" from="WebRTC/Host/CenterContainer/VBoxContainer/GenerateOutgoingCandidates" to="." method="_on_host_generate_outgoing_candidates_pressed"]
+[connection signal="pressed" from="WebRTC/Host/CenterContainer/VBoxContainer/CopyOutgoingCandidates" to="." method="_on_host_copy_outgoing_candidates_pressed"]
+[connection signal="pressed" from="WebRTC/Host/CenterContainer/VBoxContainer/PasteCandidates" to="." method="_on_host_paste_candidates_pressed"]
+[connection signal="pressed" from="WebRTC/Host/CenterContainer/VBoxContainer/Connect" to="." method="_on_host_connect_pressed"]
+[connection signal="pressed" from="WebRTC/Join/CenterContainer/VBoxContainer/PasteOffer" to="." method="_on_join_paste_offer_pressed"]
+[connection signal="pressed" from="WebRTC/Join/CenterContainer/VBoxContainer/GenerateAnswer" to="." method="_on_join_generate_answer_pressed"]
+[connection signal="pressed" from="WebRTC/Join/CenterContainer/VBoxContainer/CopyAnswer" to="." method="_on_join_copy_answer_pressed"]
+[connection signal="pressed" from="WebRTC/Join/CenterContainer/VBoxContainer/GenerateOutgoingCandidates" to="." method="_on_join_generate_outgoing_candidates_pressed"]
+[connection signal="pressed" from="WebRTC/Join/CenterContainer/VBoxContainer/CopyOutgoingCandidates" to="." method="_on_join_copy_outgoing_candidates_pressed"]
+[connection signal="pressed" from="WebRTC/Join/CenterContainer/VBoxContainer/PasteCandidates" to="." method="_on_join_paste_candidates_pressed"]
+[connection signal="pressed" from="WebRTC/Join/CenterContainer/VBoxContainer/Connect" to="." method="_on_join_connect_pressed"]
