@@ -255,7 +255,7 @@ layout_mode = 2
 text = "Connect"
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("uid://c7uac7uxabqjs")
+_spawnable_scenes = PackedStringArray("res://scenes/player.tscn")
 spawn_path = NodePath("..")
 
 [connection signal="pressed" from="WebRTC/Start/CenterContainer/VBoxContainer/HostButton" to="." method="_on_host_button_pressed"]

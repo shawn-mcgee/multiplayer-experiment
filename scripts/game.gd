@@ -230,4 +230,4 @@ const PLAYER = preload("res://scenes/player.tscn")
 func spawn_player(pid: int) -> void:
   var player = PLAYER.instantiate()
   player.name = str(pid)
-  add_child(player)
+  call_deferred("add_child", player)
