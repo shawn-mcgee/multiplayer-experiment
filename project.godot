@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="multiplayer-experiment"
-run/main_scene="uid://bvk6k06w72x6t"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+run/main_scene="res://scenes/game.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [input]
