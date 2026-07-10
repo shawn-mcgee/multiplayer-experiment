@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bwodvgdiber4n"]
+
+[ext_resource type="Script" uid="uid://ct0ayvmdx3nab" path="res://game2.gd" id="1_58i86"]
+
+[node name="Game" type="Node2D" unique_id=648743639]
+script = ExtResource("1_58i86")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=250995884]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=749331154]
+_spawnable_scenes = PackedStringArray("uid://c7uac7uxabqjs")
+spawn_path = NodePath("..")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=856301895]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1997078942]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1004872238]
+layout_mode = 0
+offset_right = 152.0
+offset_bottom = 105.0
+
+[node name="WebRtcSignallingServer" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=2058477342]
+visible = false
+layout_mode = 2
+text = "WebRTC Signalling Server"
+
+[node name="HSeparator" type="HSeparator" parent="CanvasLayer/Control/VBoxContainer" unique_id=1451097913]
+visible = false
+layout_mode = 2
+
+[node name="Host" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1427962815]
+layout_mode = 2
+text = "Host"
+
+[node name="RoomId" type="TextEdit" parent="CanvasLayer/Control/VBoxContainer" unique_id=574178553]
+layout_mode = 2
+placeholder_text = "Room Id"
+scroll_fit_content_height = true
+
+[node name="Join" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=2087275895]
+layout_mode = 2
+text = "Join"
