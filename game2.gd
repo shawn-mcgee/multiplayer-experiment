@@ -224,6 +224,7 @@ func _on_peer_connected   (peer_id: int):
 
 func _on_peer_disconnected(peer_id: int):
   print("[Game] Peer with id %d disconnected." % peer_id)
+  destroy_player(peer_id)
 
 const PLAYER = preload("res://player.tscn")
 func spawn_player(peer_id: int):
@@ -234,6 +235,14 @@ func spawn_player(peer_id: int):
   player.name = str(peer_id)
 
   call_deferred("add_child", player)
+
+func destroy_player(peer_id: int):
+  if !multiplayer.is_server():
+    return
+
+  var player = get_node_or_null(str(peer_id))
+  if player:
+    player.queue_free()
 
 class Protocol:
   const HOST_ROOM = "v1-host-room"
