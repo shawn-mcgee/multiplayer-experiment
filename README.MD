@@ -5,7 +5,7 @@ I have a deep desire to create a game and to do it with friends. A part of me be
 ### Objectives
 
 - [X] Automagically publish to the web in minutes
-- [ ] Connect players with painless matchmaking (Maybe Trystero?)
+- [X] Connect players with painless matchmaking (~~Maybe Trystero?~~ Custom WebRTC Coordinator via Cloudflare Workers)
 - [ ] Develop a workflow for quickly testing multiplayer features locally
 
 ### Features
