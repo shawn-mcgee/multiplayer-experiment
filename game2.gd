@@ -1,6 +1,33 @@
 extends Node2D
 
-const WEBRTC_COORDINATOR = "wss://webrtc-coordinator.s-mcgeek07.workers.dev"
+const WEBRTC_COORDINATOR   = "wss://webrtc-coordinator.s-mcgeek07.workers.dev"
+const WEBRTC_CONFIGURATION = {
+  "iceServers": [
+      {
+        "urls": "stun:stun.relay.metered.ca:80",
+      },
+      {
+        "urls": "turn:standard.relay.metered.ca:80",
+        "username": "1e7fc80a14bceb79f35cc27a",
+        "credential": "EXkiKkQYhUdelWg1",
+      },
+      {
+        "urls": "turn:standard.relay.metered.ca:80?transport=tcp",
+        "username": "1e7fc80a14bceb79f35cc27a",
+        "credential": "EXkiKkQYhUdelWg1",
+      },
+      {
+        "urls": "turn:standard.relay.metered.ca:443",
+        "username": "1e7fc80a14bceb79f35cc27a",
+        "credential": "EXkiKkQYhUdelWg1",
+      },
+      {
+        "urls": "turns:standard.relay.metered.ca:443?transport=tcp",
+        "username": "1e7fc80a14bceb79f35cc27a",
+        "credential": "EXkiKkQYhUdelWg1",
+      },
+  ],
+}
 
 # const WEBRTC_COORDINATOR = "ws://127.0.0.1:8787"
 
@@ -115,6 +142,7 @@ func _on_join_room_response(message: Dictionary):
   mp.peer_disconnected.connect(_on_peer_disconnected)
 
   var peer = WebRTCPeerConnection.new()
+  peer.initialize(WEBRTC_CONFIGURATION)
   mp.add_peer(peer, 1)
 
   var _on_session_description_created = func(type: String, sdp: String):
@@ -147,6 +175,7 @@ func _on_webrtc_offer        (message: Dictionary):
   var peer_id = message.from_id
 
   var peer = WebRTCPeerConnection.new()
+  peer.initialize(WEBRTC_CONFIGURATION)
   mp.add_peer(peer, peer_id)
 
   var _on_session_description_created = func(type: String, sdp: String):
