@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c7uac7uxabqjs"]
+
+[ext_resource type="Script" uid="uid://dkrj3h64ei1u0" path="res://player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://cxkro51x0387t" path="res://icon.svg" id="2_qhqgy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_036b0"]
+radius = 64.0
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_onrkg"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+
+[node name="Player" type="CharacterBody2D" unique_id=1761720039]
+motion_mode = 1
+platform_floor_layers = 4294901760
+script = ExtResource("1_g2els")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2083392278]
+texture = ExtResource("2_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1106379087]
+shape = SubResource("CircleShape2D_036b0")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=517405015]
+replication_config = SubResource("SceneReplicationConfig_onrkg")
