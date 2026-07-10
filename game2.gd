@@ -140,7 +140,7 @@ func _on_join_room_response(message: Dictionary):
   webrtc_answer       .connect(self._on_webrtc_answer       )
   webrtc_ice_candidate.connect(self._on_webrtc_ice_candidate)
 
-  peer.create_data_channel("data", { "id": 1, "negotiated": true })
+  # peer.create_data_channel("data", { "id": 1, "negotiated": true })
   peer.create_offer()
 
 func _on_webrtc_offer        (message: Dictionary):
@@ -170,7 +170,7 @@ func _on_webrtc_offer        (message: Dictionary):
   peer.session_description_created.connect(_on_session_description_created)
   peer.      ice_candidate_created.connect(      _on_ice_candidate_created)
 
-  peer.create_data_channel("data", { "id": 1, "negotiated": true })
+  # peer.create_data_channel("data", { "id": 1, "negotiated": true })
   peer.set_remote_description(
     message.type, 
     message.sdp
